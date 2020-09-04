@@ -4,6 +4,7 @@ from gettext import dgettext
 from os.path import getmtime, join as pathJoin
 from skin import setups
 
+from Components.ActionMap import HelpableActionMap
 from Components.config import ConfigBoolean, ConfigNothing, ConfigSelection, config
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
@@ -55,6 +56,15 @@ class Setup(ConfigListScreen, Screen, HelpableScreen):
 				print("[Setup] Error: Unable to load menu image '%s'!" % menuimage)
 		else:
 			self.menuimage = None
+		if "key_red" not in self:
+			self["key_red"] = StaticText(_("Cancel"))
+		if "key_green" not in self:
+			self["key_green"] = StaticText(_("Save"))
+		self["actions"] = HelpableActionMap(self, ["ConfigListActions"], {
+			"cancel": (self.keyCancel, _("Cancel any changed settings and exit")),
+			"close": (self.closeRecursive, _("Cancel any changed settings and exit all menus")),
+			"save": (self.keySave, _("Save all changed settings and exit")),
+		}, prio=1, description=_("Common Setup Functions"))
 		self.createSetup()
 		if self.layoutFinished not in self.onLayoutFinish:
 			self.onLayoutFinish.append(self.layoutFinished)
@@ -77,7 +87,7 @@ class Setup(ConfigListScreen, Screen, HelpableScreen):
 				skin = setup.get("skin", "")
 				if skin != "":
 					self.skinName.insert(0, skin)
-				if config.usage.show_menupath.value in ("large", "small") and "menuTitle" in setup:
+				if config.usage.showScreenPath.value in ("large", "small") and "menuTitle" in setup:
 					title = setup.get("menuTitle", "").encode("UTF-8")
 				else:
 					title = setup.get("title", "").encode("UTF-8")
