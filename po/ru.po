@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: litvcom\n"
+"Last-Translator: BarviX6\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #, python-format
 msgid ""
@@ -2900,6 +2900,9 @@ msgstr "Центрировать субтитры на этом канале"
 
 msgid "Center DVB subtitles"
 msgstr "Центрировать субтитры"
+
+msgid "Center text"
+msgstr "Текст  по центру"
 
 msgid "Central African Republic"
 msgstr "Центральноафриканская Республика"
@@ -6818,6 +6821,9 @@ msgstr "Выключение LED"
 msgid "LED Normal"
 msgstr "LED в обычном режиме"
 
+msgid "LED SETUP"
+msgstr "Настройка  VFD экрана"
+
 msgid "LED Standby"
 msgstr "LED в режиме ожидания"
 
@@ -6829,6 +6835,15 @@ msgstr "Яркость дисплея в обычном режиме."
 
 msgid "LED brightness during standby."
 msgstr "Яркость дисплея в режиме ожидания."
+
+msgid "LED display"
+msgstr "VFD экран"
+
+msgid "LED display configuration for Spark"
+msgstr "Конфигурация VFD экрана"
+
+msgid "LED display configuration"
+msgstr "Конфигурация VFD экрана"
 
 msgid "LED display panel"
 msgstr "Дисплей LED"
@@ -9565,6 +9580,15 @@ msgstr "Запись и таймшифт"
 msgid "Recovery mode"
 msgstr "Режим восстановления"
 
+msgid "Red LED on in standby"
+msgstr "Красный светодиод в режиме ожидания"
+
+msgid "Red LED on in deep standby"
+msgstr "Красный светодиод в глубоком режиме ожидания"
+
+msgid "Red LED during recording"
+msgstr "Красный светодиод во время записи"
+
 msgid "Red"
 msgstr "Красный"
 
@@ -10215,6 +10239,9 @@ msgstr "Панель скриптов"
 
 msgid "Scripts"
 msgstr "Скрипты"
+
+msgid "Scroll text"
+msgstr "Прокрутка текста"
 
 msgid "Scrolling Speed"
 msgstr "Скорость прокрутки"
@@ -11227,6 +11254,12 @@ msgstr "Показать записи"
 msgid "Show network mounts ..."
 msgstr "Показать точки монтирования сети"
 
+msgid "Show on LED display"
+msgstr "Отображать в рабочем режиме"
+
+msgid "Show on LED display in standby"
+msgstr "Отображать в режиме ожидания"
+
 msgid "Show or hide the extended description, (skin dependant)."
 msgstr "Показать или спрятать расширенное описание, если скин поддерживает"
 
@@ -11316,6 +11349,9 @@ msgstr "Включить режим радио"
 
 msgid "Show the tv player..."
 msgstr "Включить режим ТВ"
+
+msgid "Show this plugin in plugin menu"
+msgstr "Показать этот плагин в меню плагина"
 
 msgid "Show time elapsed as positive"
 msgstr "Показать истекшее время с положительным знаком"
@@ -13411,6 +13447,9 @@ msgstr "Скачки -"
 msgid "Uphops: "
 msgstr "Скачки: "
 
+msgid "Uppercase letters only"
+msgstr "Только прописные буквы"
+
 msgid "Upper case"
 msgstr "Заглавные"
 
@@ -14906,6 +14945,12 @@ msgstr "Чёрное и белое"
 msgid "blacklist"
 msgstr "Чёрный список"
 
+msgid "blank"
+msgstr "ничего"
+
+msgid "blink"
+msgstr "мигать"
+
 msgid "blue"
 msgstr "Синий"
 
@@ -14948,6 +14993,15 @@ msgstr "По центру, свёрнуто"
 msgid "chapters"
 msgstr "Разделы"
 
+msgid "channel name"
+msgstr "название канала"
+
+msgid "channel number"
+msgstr "номер канала"
+
+msgid "channel number and name"
+msgstr "номер канала и имя"
+
 msgid "children's/youth program (general)"
 msgstr "Детская/молодежная передача"
 
@@ -14977,6 +15031,9 @@ msgstr "Подтверждено"
 
 msgid "connected"
 msgstr "Подключено"
+
+msgid "continuous"
+msgstr "постоянная"
 
 msgid ""
 "contain a file with the name: \n"
@@ -15164,6 +15221,12 @@ msgstr "Сверх широкая"
 
 msgid "extrawide"
 msgstr "Сверхширокоугольно"
+
+msgid "date"
+msgstr "дата"
+
+msgid "day and date"
+msgstr "день и дата"
 
 msgid "failed"
 msgstr "Не удалось"
@@ -15525,6 +15588,9 @@ msgstr "Не захвачен"
 msgid "not supported"
 msgstr "Не поддерживается"
 
+msgid "nothing"
+msgstr "Ничего"
+
 msgid "nothing connected"
 msgstr "Ничего не подключено"
 
@@ -15878,6 +15944,15 @@ msgstr "Этот фаворит защищен родительским конт
 
 msgid "this recording"
 msgstr "Данная запись"
+
+msgid "time"
+msgstr "время"
+
+msgid "time and date"
+msgstr "время и дата"
+
+msgid "time, day and date"
+msgstr "время, день и дата"
 
 msgid "this service is protected by a parental control pin"
 msgstr "Этот канал защищен PIN-кодом"
