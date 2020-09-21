@@ -336,7 +336,7 @@ void *start_loop(void *arg)
 	#elif defined (ENABLE_VIP2)
 		char str[] = "VIP2 E2";
 	#else
-		char str[] = "SH4 Git Enigma2";
+		char str[] = "E2";
 	#endif
 	int vfddev = open ("/dev/vfd", O_WRONLY);
 	write(vfddev, str, strlen(str));

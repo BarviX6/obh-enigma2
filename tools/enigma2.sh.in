@@ -5,7 +5,7 @@ exec_prefix=@exec_prefix@
 datarootdir=@datarootdir@
 
 # write -OBH- on vfd display
-echo "-OBH-" > /dev/vfd
+echo "OBH" > /dev/vfd
 
 # perform a NTP update sync, before starting Enigma2, as it is broke in OE.
 #if [ -x /usr/sbin/ntpdate ]; then
