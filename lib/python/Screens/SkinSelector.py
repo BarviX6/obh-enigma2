@@ -19,7 +19,8 @@ from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN, SCOPE_LCDSKIN
 
 
 class SkinSelector(Screen, HelpableScreen):
-	skin = ["""
+	skin = [
+		"""
 	<screen name="SkinSelector" position="center,center" size="%d,%d">
 		<widget name="preview" position="center,%d" size="%d,%d" alphatest="blend" />
 		<widget source="skins" render="Listbox" position="center,%d" size="%d,%d" enableWrapAround="1" scrollbarMode="showOnDemand">
@@ -122,8 +123,8 @@ class SkinSelector(Screen, HelpableScreen):
 					if skinFile == "skin.xml":
 						with open(skinPath, "r") as fd:
 							mm = mmap.mmap(fd.fileno(), 0, prot=mmap.PROT_READ)
-							skinWidth = re.search("\<?resolution.*?\sxres\s*=\s*\"(\d+)\"", mm)
-							skinHeight = re.search("\<?resolution.*?\syres\s*=\s*\"(\d+)\"", mm)
+							skinWidth = re.search(r"<?resolution.*?\sxres\s*=\s*\"(\d+)\"", mm)
+							skinHeight = re.search(r"<?resolution.*?\syres\s*=\s*\"(\d+)\"", mm)
 							if skinWidth and skinHeight:
 								skinSize = "%sx%s" % (skinWidth.group(1), skinHeight.group(1))
 							resolution = skinHeight and resolutions.get(skinHeight.group(1), None)
@@ -174,7 +175,7 @@ class SkinSelector(Screen, HelpableScreen):
 			self["description"].setText(_("Press OK to activate the selected%s skin.") % msg)
 
 	def keyCancel(self):
-		self.close(False)
+		self.close()
 
 	def closeRecursive(self):
 		self.close(True)
@@ -185,7 +186,7 @@ class SkinSelector(Screen, HelpableScreen):
 		if skin == self.config.value:
 			if skin == self.currentSkin:
 				print("[SkinSelector] Selected skin: '%s' (Unchanged!)" % pathjoin(self.rootDir, skin))
-				self.cancel()
+				self.close()
 			else:
 				print("[SkinSelector] Selected skin: '%s' (Trying to restart again!)" % pathjoin(self.rootDir, skin))
 				restartBox = self.session.openWithCallback(self.restartGUI, MessageBox, _("To apply the selected '%s' skin the GUI needs to restart. Would you like to restart the GUI now?") % label, MessageBox.TYPE_YESNO)
@@ -194,7 +195,7 @@ class SkinSelector(Screen, HelpableScreen):
 			print("[SkinSelector] Selected skin: '%s' (Pending skin '%s' cancelled!)" % (pathjoin(self.rootDir, skin), pathjoin(self.rootDir, self.config.value)))
 			self.config.value = skin
 			self.config.save()
-			self.cancel()
+			self.close()
 		else:
 			print("[SkinSelector] Selected skin: '%s'" % pathjoin(self.rootDir, skin))
 			restartBox = self.session.openWithCallback(self.restartGUI, MessageBox, _("To save and apply the selected '%s' skin the GUI needs to restart. Would you like to save the selection and restart the GUI now?") % label, MessageBox.TYPE_YESNO)
@@ -272,7 +273,5 @@ class SkinSelectorSummary(ScreenSummary):
 	def selectionChanged(self):
 		currentEntry = self.parent["skins"].getCurrent()  # Label
 		self["entry"].setText(currentEntry[1])
-		self["value"].setText("%s   %s" % (
-			currentEntry[5], currentEntry[2] if currentEntry[5] and currentEntry[2] else currentEntry[5] or currentEntry[2]
-		))  # Resolution and/or Flag.
+		self["value"].setText("%s   %s" % (currentEntry[5], currentEntry[2]) if currentEntry[5] and currentEntry[2] else currentEntry[5] or currentEntry[2])  # Resolution and/or Flag.
 		self["Name"].setText(self["entry"].getText())
